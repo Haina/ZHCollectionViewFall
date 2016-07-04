@@ -16,6 +16,7 @@ DerivedData/
 *.perspectivev3
 !default.perspectivev3
 xcuserdata/
+*.xccheckout
 
 ## Other
 *.moved-aside
@@ -35,6 +36,9 @@ xcuserdata/
 # https://guides.cocoapods.org/using/using-cocoapods.html#should-i-check-the-pods-directory-into-source-control
 #
 # Pods/
+Pods/
+Pods/*
+Podfile.lock
 
 # Carthage
 #
