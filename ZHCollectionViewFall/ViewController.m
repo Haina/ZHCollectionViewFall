@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import <AssetsLibrary/AssetsLibrary.h>
 #import "DDCollectionViewFlowLayout.h"
+#import <MJRefresh/MJRefresh.h>
 
 @interface ZHPhotoCell : UICollectionViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *photoImage;
@@ -38,7 +39,7 @@
     // Do any additional setup after loading the view, typically from a nib.
     
     self.title = @"照片瀑布流";
-    columns = 2;
+    columns = 3;
     if(!dataList)
         dataList = [[NSMutableArray alloc] initWithCapacity:0];
     [dataList removeAllObjects];
@@ -48,6 +49,26 @@
     [self.collectionView setCollectionViewLayout:layout];
     
     [self loadAssets];
+    [self setFooterAndHeaderRefresh];
+}
+
+- (void)endHeaderRefresh{
+    [self.collectionView.mj_header endRefreshing];
+}
+
+- (void)setFooterAndHeaderRefresh{
+    
+    //顶部刷新
+    self.collectionView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        [self loadAssets];
+    }];
+    
+    //底部刷新
+    self.collectionView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
+        [dataList addObjectsFromArray:dataList];
+        [self.collectionView.mj_footer endRefreshing];
+        [self.collectionView reloadData];
+    }];
 }
 
 #pragma mark - UICollectionView DataSource Methods
@@ -143,6 +164,7 @@
             }
             if (dataList.count > 0) {
                 // Added first asset so reload data
+                [self.collectionView.mj_header performSelectorOnMainThread:@selector(endRefreshing) withObject:nil waitUntilDone:NO];
                 [self.collectionView performSelectorOnMainThread:@selector(reloadData) withObject:nil waitUntilDone:NO];
             }
         };

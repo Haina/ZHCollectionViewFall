@@ -17,8 +17,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uRb-6a-LnL">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="Sbs-0q-ieh"/>
+                                </constraints>
+                                <items>
+                                    <navigationItem title="相册瀑布流" id="Zlw-QL-6CI"/>
+                                </items>
+                            </navigationBar>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="yqF-KK-xIt">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="5" minimumInteritemSpacing="2" id="ELY-7P-9Bt">
                                     <size key="itemSize" width="80" height="80"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -59,9 +69,12 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="yqF-KK-xIt" secondAttribute="trailing" id="2mX-t1-PUr"/>
+                            <constraint firstAttribute="trailing" secondItem="uRb-6a-LnL" secondAttribute="trailing" id="88Q-2D-KaJ"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="yqF-KK-xIt" secondAttribute="bottom" id="Chm-xf-Lj7"/>
+                            <constraint firstItem="uRb-6a-LnL" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="OhK-Si-BIb"/>
+                            <constraint firstItem="uRb-6a-LnL" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="PxM-SA-iLk"/>
                             <constraint firstItem="yqF-KK-xIt" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Qg3-kx-qEg"/>
-                            <constraint firstItem="yqF-KK-xIt" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="o78-o4-ybA"/>
+                            <constraint firstItem="yqF-KK-xIt" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="64" id="o78-o4-ybA"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
