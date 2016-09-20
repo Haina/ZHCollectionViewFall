@@ -1,6 +1,6 @@
 source 'https://github.com/CocoaPods/Specs.git'
 
-link_with ‘ZHCollectionViewFall’
+link_with 'ZHCollectionViewFall','Orange'
 
 platform :ios, '6.0'
     

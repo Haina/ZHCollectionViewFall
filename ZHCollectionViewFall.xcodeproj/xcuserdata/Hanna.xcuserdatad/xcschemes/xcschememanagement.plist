@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Orange.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>3</integer>
+		</dict>
 		<key>ZHCollectionViewFall.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -12,6 +17,11 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>B5D1924B1D9130BC00C4B873</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>B5DF173F1D24C1E1002AA3F9</key>
 		<dict>
 			<key>primary</key>
