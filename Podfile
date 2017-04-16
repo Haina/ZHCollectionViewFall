@@ -1,7 +1,11 @@
 source 'https://github.com/CocoaPods/Specs.git'
 
-link_with 'ZHCollectionViewFall','Orange'
-
 platform :ios, '6.0'
-    
+
+def myPods
 pod 'MJRefresh', '3.1.9'
+end
+
+targe 'ZHCollectionViewFall' do
+    myPods
+end
