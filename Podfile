@@ -6,6 +6,6 @@ def myPods
 pod 'MJRefresh', '3.1.9'
 end
 
-targe 'ZHCollectionViewFall' do
+target 'ZHCollectionViewFall' do
     myPods
 end
